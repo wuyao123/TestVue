@@ -1,0 +1,62 @@
+@routerActive: #2d8cf0;
+@white-bg: #ffffff;
+@border-bottom-color: #d5d8da;
+.router-link-active{
+  color: @routerActive;
+}
+.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item{
+  padding: 0;
+}
+
+// 重写ivu-tabs样式
+.ivu-tabs{
+  &-bar{
+    margin-bottom: 0;
+    background: @white-bg;
+  }
+  &-tab{
+    padding: 10px 20px!important;
+  }
+  &-content{
+    padding: 20px;
+  }
+  &-tabpane{
+    background: @white-bg;
+    padding: 20px;
+  }
+}
+
+.ivu-btn{
+  border-radius: 0;
+  padding: 8px 20px;
+}
+
+//重写ivu-menu
+.ivu-menu{
+  &:after{
+    width: 0;
+  }
+  &-submenu{
+    border-bottom: 1px solid #d5d8da;
+  }
+  &-item{
+    padding: 0;
+    &>a{
+      display: inline-block;
+      padding: 14px 0 14px 48px;
+      width: 100%;
+      color: #000;
+    }
+  }
+}
+
+.h1-header{
+  background: @white-bg;
+  border-bottom: 1px solid @border-bottom-color;
+  padding-left: 20px;
+}
+
+.btn-add{
+  text-align: right;
+  margin-bottom: 20px;
+}

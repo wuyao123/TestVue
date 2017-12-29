@@ -25,6 +25,25 @@ const menus = {
         component: YaoMing
       }
     }
+  },
+  'magics':{
+    name: 'magics',
+    path: '/magics',
+    label: '休斯顿火箭',
+    players: {
+      'harise': {
+        name: 'harise',
+        path: '/magics/harise',
+        label: '哈里斯',
+        component: YaoMing
+      },
+      'lewise': {
+        name: 'lewise',
+        path: '/magics/lewise',
+        label: '刘易斯',
+        component: YaoMing
+      }
+    }
   }
 };
 

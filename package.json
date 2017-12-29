@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "iview": "^2.8.0",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -42,6 +40,9 @@
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-loader": "^13.3.0",

@@ -6,7 +6,7 @@
 
         </Header>
         <Layout>
-          <Sider>
+          <Sider class="layout-menu" :style="{height:screenHeight-64 + 'px'}">
             <Menu width="auto" :active-name="activeName">
               <Submenu v-for="team in menus" :key="team.name" :name="team.name">
                 <template slot="title">
@@ -22,8 +22,7 @@
               </Submenu>
             </Menu>
           </Sider>
-          <Layout>
-            {{activeName}}
+          <Layout class="layout-content" :style="{height:screenHeight-64 + 'px'}">
             <router-view/>
           </Layout>
         </Layout>
@@ -38,6 +37,7 @@
     name: 'app',
     data () {
       return {
+        screenHeight: document.documentElement.clientHeight,
         menus,
       }
     },
@@ -46,11 +46,7 @@
         return this.$route.name;
       }
     },
-    mounted () {
-      console.log(menus);
-    }
   }
 </script>
 
-<style>
-</style>
+<style lang="less" rel="stylesheet/less" src="./assets/stylus/app.less"></style>

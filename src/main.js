@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Iview from 'iview'
 import 'iview/dist/styles/iview.css'
+import '@/assets/stylus/iview-reset.less'
 
 Vue.use(Iview);
 
