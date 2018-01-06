@@ -4,10 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Iview from 'iview'
+import Toast from '@/common/toast.vue'
 import 'iview/dist/styles/iview.css'
 import '@/assets/stylus/iview-reset.less'
 
 Vue.use(Iview);
+
+Vue.component('Toast', Toast);
 
 Vue.config.productionTip = false
 

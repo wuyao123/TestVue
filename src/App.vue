@@ -5,8 +5,9 @@
         <Header>
 
         </Header>
-        <Layout>
-          <Sider class="layout-menu" :style="{height:screenHeight-64 + 'px'}">
+        <div class="layout-content">
+          <div class="menu-top"></div>
+          <div id="menuContainer" class="layout-menu" :style="{height:screenHeight-64-50 + 'px'}" @click="triggerNscroll">
             <Menu width="auto" :active-name="activeName">
               <Submenu v-for="team in menus" :key="team.name" :name="team.name">
                 <template slot="title">
@@ -21,18 +22,22 @@
                   </MenuItem>
               </Submenu>
             </Menu>
-          </Sider>
-          <Layout class="layout-content" :style="{height:screenHeight-64 + 'px'}">
+          </div>
+          <!--<div class="menu-bottom"></div>-->
+          <div class="layout-page" :style="{height:screenHeight-64 + 'px'}">
             <router-view/>
-          </Layout>
-        </Layout>
+          </div>
+        </div>
       </Layout>
     </div>
   </div>
 </template>
 
-<script>
+<script type="text/babel">
   import { menus } from './router'
+  import $ from 'jquery'
+  import nscroll from './common/jquery.nicescroll.min'
+
   export default {
     name: 'app',
     data () {
@@ -44,7 +49,24 @@
     computed: {
       activeName () {
         return this.$route.name;
+      },
+    },
+    methods: {
+      triggerNscroll () {
+        setTimeout(function(){
+          $('#menuContainer').niceScroll().resize();
+        }, 500);
       }
+    },
+    created () {
+      console.log(this.screenHeight);
+      this.triggerNscroll();
+    },
+    mounted () {
+      this.screenHeight = document.documentElement.clientHeight;
+      window.onresize = () => {
+        this.screenHeight = document.documentElement.clientHeight;
+      };
     },
   }
 </script>

@@ -1,6 +1,43 @@
+body{
+  overflow: hidden;
+}
 .layout{
   &-menu{
+    position: absolute;
+    left: 0;
+    top: 50px;
     background: #fff;
+    width: 200px;
+    //border-right: 1px solid #d5d8da;
+  }
+  &-content{
+    position: relative;
+  }
+  &-page{
+    position: absolute;
+    left: 200px;
+    top: 0;
+    overflow: auto;
+  }
+  #menuContainer{
+    overflow: hidden;
     border-right: 1px solid #d5d8da;
+    z-index: 0;
+  }
+
+
+  .menu-top{
+    width: 200px;
+    height: 50px;
+    background: red;
+    position: fixed;
+
+  }
+  .menu-bottom{
+    width: 200px;
+    height: 50px;
+    background: red;
+    position: fixed;
+    bottom: 0;
   }
 }
